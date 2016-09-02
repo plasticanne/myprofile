@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+    body {
+        background-color: nstraparent;
+    }
+    
+    .Standby,
+    .Petting {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 500px;
+        height: 800px;
+        //  background-color: #FFF;
+    }
+    
+    .Standby {
+        z-index: 0;
+    }
+    
+    .Petting {
+        z-index: 100;
+        display: none;
+    }
+    
+    #_mouse {
+        //  border: 2px solid #fff;
+        z-index: 500;
+        position: fixed;
+        top: 100px;
+        left: 50px;
+        width: 400px;
+        height: 400px;
+        cursor: url('images/01.png'), default;
+    }
+    
+    div {
+        display: none;
+    }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+    document.ondragstart = function() {
+        return false;
+    };
+    $(window).load(function() {
+
+
+        $("div").show();
+        var initX
+        var initY
+        var finX
+        var finY
+        var _mouse = $("#_mouse");
+        var Petting1 = $("#Petting1");
+        var Standby1 = $("#Standby1");
+        /*       _mouse.click(function() {
+                       Petting1.css("display", "block");
+                       Standby1.css("display", "none");
+                       Petting1[0].currentTime = 0;
+                       Petting1[0].play();
+                       document.getElementById("Petting1").addEventListener('ended', myHandler, false);
+                       function myHandler(e) {
+                           Standby1.css("display", "block");
+                           Petting1.css("display", "none");
+                           Standby1[0].currentTime = 0;
+                           Standby1[0].play();
+                       };
+                   });
+*/
+        _mouse.mousedown(function(e) {
+            _mouse.css("cursor", "url('images/02.png'), default");
+            initX = e.clientX;
+            initY = e.clientY;
+        });
+        //  document.getElementById("_mouse").onmouseup=function(e) {
+        _mouse.mouseup(function(e) {
+            _mouse.css("cursor", "url('images/01.png'), default");
+            finX = e.clientX;
+            finY = e.clientY;
+            var mousedistance = (Math.pow(finX - initX, 2) + Math.pow(finX - initX, 2));
+            if (mousedistance >= 100) {
+                Standby1.css("display", "none");
+                Petting1.css("display", "block");
+                Petting1[0].currentTime = 0;
+                Petting1[0].play();
+                document.getElementById("Petting1").addEventListener('ended', myHandler, false);
+
+                function myHandler(e) {
+                    Petting1.css("display", "none");
+                    Standby1.css("display", "block");
+                    Standby1[0].currentTime = 0;
+                    Standby1[0].play();
+                };
+
+            };
+        });
+        //  document.getElementById("_mouse").addEventListener('mousemove',mousedistance,false);
+        //  function mousedistance(e) {
+
+        //  });
+
+        //  document.getElementById("_mouse").onclick=function(mouse_init) {alert(mouse_init["initY"])};
+        //  $("#_mouse").click(function(mouse_init) {alert(mouse_init["initY"])});
+
+        //    $("#_mouse").mouseup(function() { 
+        //    document.getElementById("_mouse").onmouseup(function() {
+
+        //      $("#_mouse").css("cursor","url('images/01.png'), default");
+        //    });
+        //  });
+        //  $("#_mouse").click(function() {
+        //    $("#Petting1").css("display","block");
+        //    $("#Petting1")[0].currentTime=3;
+        //    $("#Petting1")[0].play();
+        //    document.getElementById("Petting1").addEventListener('ended',myHandler,false);
+        //    function myHandler(e) {
+        //      $("#Petting1").css("display","none");
+        //    }
+        //  });
+
+    });
+    </script>
+    <title>貓貓頭</title>
+</head>
+
+<body>
+    <div id="_mouse">
+    </div>
+    <div id="_video">
+        <video id="Standby1" class="Standby" preload="auto" autoplay loop src="video/Petting_Standby.webm"></video>
+        <video id="Petting1" class="Petting" preload="auto" src="video/Petting_Reaction.webm"></video>
+    </div>
+</body>
+
+</html>

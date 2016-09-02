@@ -1,0 +1,186 @@
+ol.nav-pills {
+    z-index: 10;
+    bottom: 5%;
+    position: fixed;
+}
+
+ol.nav-pills a {
+    border: 2px solid #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    padding: 0px;
+    margin: 10px;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #fff;
+}
+
+h1 {
+    margin: 0px;
+    padding: 20px;
+}
+
+p {
+    margin: 0px;
+    padding: 20px;
+    padding-left: 40px;
+}
+
+div.col-sm-3,
+div.col-sm-9 {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/*    
+    #bbb{
+  position:fixed;
+  margin: 0px 0px 0px 0px;
+  height: 1080px;
+ overflow: hidden;
+}
+*/
+
+.fp-tableCell {
+    //       text-align:center;
+    vertical-align: baseline;
+}
+
+#logo {
+    margin-top: 10%;
+    margin-left: 35%;
+    width: 30%;
+}
+
+#aaa {
+    margin: -6000px 0px 0px 0px;
+}
+
+div.col-sm-9 div {
+    margin: 0px;
+    padding: 0px;
+    font-size: 28px;
+}
+
+div.col-sm-3 div {
+    margin: 0px;
+    padding: 0px;
+    height: 2000px;
+    font-size: 28px;
+}
+
+div.col-sm-3 {
+    z-index: 2;
+}
+
+#section0,
+#section00 {
+    color: #fff;
+    //       background-color: #000;
+    background-image: url("../images/Ageeba.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#section11,
+#section00 {
+    background-attachment: fixed;
+}
+
+#section1,
+#section11 {
+    color: #fff;
+    //     background-color: #1E88E5;
+    background-image: url("../images/Quality.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#section2,
+#section22 {
+    color: #fff;
+    //background-color: #673ab7;
+    background-image: url("../images/GMSGfGX.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#section3,
+#section33 {
+    color: #fff;
+    background-color: #ff9800;
+    background-image: url("../images/Nature.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.A_img {
+    position: absolute;
+    top: 0px;
+    left: -33.333%;
+    //   width: 100%;
+    //height: 100%;
+}
+
+.slide {
+    position: relative;
+}
+
+@media screen and (max-width: 810px) {
+    #section0,
+    #section1,
+    #section2,
+    #section3,
+    {
+        margin-left: 150px;
+    }
+}
+
+#chatroom_div,
+#dashboard_div,
+#fbapi_div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#chart_div {
+    position: relative;
+    height: 90%;
+}
+
+#filter_div {
+    position: relative;
+    height: 10%;
+}
+
+#_video {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+}
+
+#framepetting,
+#s2view {
+    position: relative;
+    margin-left: 40px;
+    width: 95%;
+    height: 80%;
+    //    background-color: #fff;
+    overflow: hidden;
+}
+
+#framepetting>iframe {
+    margin-left: 15%;
+    border: none;
+}
+
+#s2view>div {
+    visibility: hidden;
+}
