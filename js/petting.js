@@ -1,3 +1,4 @@
+var pettingrun;
 (pettingrun = function() {
     var initX;
     var initY;

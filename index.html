@@ -23,7 +23,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!--<script src="jQueryAssets/jquery-1.11.1.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <!-- <script src="http://cdn.staticfile.org/jquery-easing/1.3/jquery.easing.min.js"></script> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
     <script src="js/bootstrap.js"></script>
@@ -55,7 +55,16 @@
         ////////google chart src="js/gchart.js
         clickbtn("#goldprice", "#dashboard_div", gchart);
         ////////FB api
-        clickbtn("#fbapi", "#fbapi_div");
+    var getFb;
+    getFb = function() {
+        FB.getLoginStatus(function(response) {
+            //            FB.api('/113124472034820'
+            //            , FB.getAuthResponse(),function(response) {
+            console.log(response);
+            //                $("#s2view>#fbapi_div").html(response)
+        });
+    };
+    clickbtn("#fbapi", "#fbapi_div", getFb);
         ////////Chat Room
         clickbtn("#chatroom", "#chatroom_div");
         ////////Petting iframe
@@ -69,6 +78,28 @@
 </head>
 
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+    <div id="fb-root"></div>
+    <script type="text/javascript">
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '883006181804225',
+            xfbml: true,
+            version: 'v2.7'
+        });
+    };
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    </script>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3">
@@ -95,7 +126,9 @@
                     </div>
                     <div class="leftdiv" id="section00">
                         <h1>My Profile</h1>
-                        <p></p>
+                        <p>
+                            <div class="fb-like" data-href="http://pettingtest2.kissr.com" data-layout="button_count" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
+                        </p>
                     </div>
                 </div>
             </div>
