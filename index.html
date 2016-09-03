@@ -34,20 +34,24 @@
     <script type="text/javascript" src="js/svgrun.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="js/gchart.js"></script>
+    <script type="text/javascript" src="js/fbapi.js"></script>
     <script type="text/javascript">
     function clickbtn(idname, divname, funname) {
         $(idname).click(function() {
-            $("#s2view>div").css("visibility", "hidden");
-            $("#s2view>" + divname).css("visibility", "visible");
+            $("#s2view>div,#s2view>div iframe").css("visibility", "hidden");
+            $("#s2view>" + divname + ",#s2view>" + divname + " iframe").css({
+                "visibility": "visible",
+                "z-index": "0"
+            });
             if (funname) {
                 funname();
             };
         });
     };
-    document.ondragstart = function() {
-        return false;
-    };
+
     $(window).load(function() {
+
+
         ////////main src="js/pagerun.js"
         pagerun();
         ////////SVG src="js/svgrun.js"
@@ -55,20 +59,18 @@
         ////////google chart src="js/gchart.js
         clickbtn("#goldprice", "#dashboard_div", gchart);
         ////////FB api
-    var getFb;
-    getFb = function() {
-        FB.getLoginStatus(function(response) {
-            //            FB.api('/113124472034820'
-            //            , FB.getAuthResponse(),function(response) {
-            console.log(response);
-            //                $("#s2view>#fbapi_div").html(response)
-        });
-    };
-    clickbtn("#fbapi", "#fbapi_div", getFb);
-        ////////Chat Room
+        clickbtn("#fbapi", "#fbapi_div", getFb);
+        clickfbbutton("#fbname", {
+            fields: "name"
+        }, "name", "#fbnamere")
+        clickfbbutton("#friendc", {
+                fields: "friends"
+            }, "friends.summary.total_count", "#fbfriendsre")
+            ////////Chat Room
         clickbtn("#chatroom", "#chatroom_div");
         ////////Petting iframe
-        $("#framepetting").append('<iframe src="petting.html" width="500px" height="800px" scrolling="no" allowtransparency="true"></iframe>');
+        $("#framepetting").append('<iframe src="petting.html" scrolling="no" allowtransparency="true"></iframe>');
+
 
 
 
@@ -80,25 +82,6 @@
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
     <div id="fb-root"></div>
     <script type="text/javascript">
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId: '883006181804225',
-            xfbml: true,
-            version: 'v2.7'
-        });
-    };
-
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {
-            return;
-        }
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
     </script>
     <div class="container-fluid">
         <div class="row">
@@ -126,9 +109,10 @@
                     </div>
                     <div class="leftdiv" id="section00">
                         <h1>My Profile</h1>
-                        <p>
-                            <div class="fb-like" data-href="http://pettingtest2.kissr.com" data-layout="button_count" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
-                        </p>
+                        <h1>
+                            <div class="fb-login-button" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" scope="public_profile,user_friends"></div></h1>
+                        <h1>
+                            <div class="fb-like" data-href="http://myprofiletest1.byethost7.com" data-layout="button_count" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div></h1>
                     </div>
                 </div>
             </div>
@@ -154,7 +138,7 @@
                         <h1></h1>
                     </div>
                     <div class="section" id="section1">
-                        <img class="A_img" src="images/Quality.jpg" />
+                        <img class="A_img" csrc="images/Quality.jpg" />
                         <div class="slide active slide1">
                             <h1>SVG</h1>
                             <div id="logo"></div>
@@ -170,19 +154,24 @@
                         </div>
                     </div>
                     <div class="section" id="section2">
-                        <h1>Section 2</h1>
-                        <img class="A_img" src="images/GMSGfGX.jpg" />
+                        <h1> </h1>
+                        <img class="A_img" csrc="images/GMSGfGX.jpg" />
                         <div id="s2view">
                             <div id="dashboard_div">
                                 <div id="chart_div"></div>
                                 <div id="filter_div"></div>
                             </div>
-                            <div id="fbapi_div">fbapi</div>
+                            <div id="fbapi_div">
+                                <h1>
+                                <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" scope="public_profile,user_friends"></div>
+                            </h1>
+                                <div id="fbapi_div2"></div>
+                            </div>
                             <div id="chatroom_div">chatroom</div>
                         </div>
                     </div>
                     <div class="section" id="section3">
-                        <img class="A_img" src="images/Nature.jpg" />
+                        <img class="A_img" csrc="images/Nature.jpg" />
                         <div class="slide">
                             <h1></h1>
                             <p>slide1</p>
