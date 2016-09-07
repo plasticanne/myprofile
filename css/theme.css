@@ -37,15 +37,18 @@ div.col-sm-9 {
     padding: 0px;
 }
 
-
-/*    
-    #bbb{
-  position:fixed;
-  margin: 0px 0px 0px 0px;
-  height: 1080px;
- overflow: hidden;
+#nameInput,
+#messageInput {
+    visibility: inherit;
+    color: black;
 }
-*/
+
+#messagesDiv {
+    visibility: inherit;
+    overflow: scroll;
+    height: 75%;
+    width: 85%;
+}
 
 .fp-tableCell {
     //       text-align:center;
@@ -163,7 +166,6 @@ div.col-sm-3 {
     height: 10%;
 }
 
-
 #framepetting,
 #s2view {
     position: relative;
@@ -174,12 +176,11 @@ div.col-sm-3 {
     overflow: hidden;
 }
 
-
 #framepetting>iframe {
     position: relative;
-    width:500px;
-    height:600px;
-    top:0%;
+    width: 500px;
+    height: 600px;
+    top: 0%;
     margin-left: 15%;
     border: none;
 }

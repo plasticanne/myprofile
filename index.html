@@ -31,11 +31,7 @@
     <!-- <script src="js/jquery.scrollify.min.js"></script> -->
     <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
     <script type="text/javascript" src="js/pagerun.js"></script>
-    <script type="text/javascript" src="js/svgrun.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="js/gchart.js"></script>
-    <script type="text/javascript" src="js/fbapi.js"></script>
-    <script type="text/javascript">
+    <script>
     function clickbtn(idname, divname, funname) {
         $(idname).click(function() {
             $("#s2view>div,#s2view>div iframe").css("visibility", "hidden");
@@ -49,27 +45,28 @@
         });
     };
 
-    $(window).load(function() {
+    $(document).ready(function() {
 
 
         ////////main src="js/pagerun.js"
         pagerun();
         ////////SVG src="js/svgrun.js"
         svgrun();
-        ////////google chart src="js/gchart.js
-        clickbtn("#goldprice", "#dashboard_div", gchart);
-        ////////FB api
-        clickbtn("#fbapi", "#fbapi_div", getFb);
-        clickfbbutton("#fbname", {
-            fields: "name"
-        }, "name", "#fbnamere")
-        clickfbbutton("#friendc", {
-                fields: "friends"
-            }, "friends.summary.total_count", "#fbfriendsre")
-            ////////Chat Room
-        clickbtn("#chatroom", "#chatroom_div");
         ////////Petting iframe
         $("#framepetting").append('<iframe src="petting.html" scrolling="no" allowtransparency="true"></iframe>');
+        ////////google chart src="js/gchart.js
+        clickbtn("#goldprice", "#dashboard_div", gchart);
+        ////////FB api and GA src="js/fbapi.js"
+        clickbtn("#fbapi", "#fbapi_div", getFb);
+        clickfbbutton("#FBgen", {
+            fields: "gender,birthday"
+        }, "gender");
+        clickfbbutton("#FBbir", {
+            fields: "gender,birthday"
+        }, "birthday");
+        ////////Chat Room
+        clickbtn("#chatroom", "#chatroom_div");
+        $('#messageInput').keypress(chatkey);
 
 
 
@@ -92,15 +89,15 @@
                         <p>Section 3</p>
                     </div>
                     <div class="leftdiv" id="section22">
-                        <h1>Ajax</h1>
+                        <h1>Api</h1>
                         <p>
-                            <button id="goldprice" class="btn btn-default">Get Gold Price Chart</button>
+                            <button id="goldprice" class="btn btn-default">Google Chart</button>
                         </p>
                         <p>
                             <button id="fbapi" class="btn btn-default">FB Api</button>
                         </p>
                         <p>
-                            <button id="chatroom" class="btn btn-default">Chat Room</button>
+                            <button id="chatroom" class="btn btn-default">Firebase Api</button>
                         </p>
                     </div>
                     <div class="leftdiv" id="section11">
@@ -163,27 +160,38 @@
                             </div>
                             <div id="fbapi_div">
                                 <h1>
-                                <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" scope="public_profile,user_friends"></div>
-                            </h1>
+                                    <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" scope="public_profile,user_birthday"></div>
+                                </h1>
                                 <div id="fbapi_div2"></div>
                             </div>
-                            <div id="chatroom_div">chatroom</div>
+                            <div id="chatroom_div">
+                            <h1>Real-time chat room</h1>
+                                <div id='messagesDiv'></div>
+                                <input type="text" id="nameInput" placeholder="Name">
+                                <input type="text" id="messageInput" placeholder="Message">
+                            </div>
                         </div>
                     </div>
-                    <div class="section" id="section3">
-                        <img class="A_img" csrc="images/Nature.jpg" />
-                        <div class="slide">
-                            <h1></h1>
-                            <p>slide1</p>
-                        </div>
-                        <div class="slide">
-                            <p>slide2</p>
-                        </div>
+                </div>
+                <div class="section" id="section3">
+                    <img class="A_img" csrc="images/Nature.jpg" />
+                    <div class="slide">
+                        <p>slide1</p>
+                    </div>
+                    <div class="slide">
+                        <p>slide2</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    <script type="text/javascript" src="js/svgrun.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="js/gchart.js"></script>
+    <script type="text/javascript" src="js/fbapi.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script type="text/javascript" src="js/firebaseapi.js"></script>
 </body>
 
 </html>
