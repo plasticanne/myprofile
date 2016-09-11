@@ -33,7 +33,7 @@ function chatkey(e) {
 };
 
 function displayChatMessage(name, text, date) {
-    $('<div/>').text(text).prepend($('<em/>').text(name + ': ')).prepend($('<em/>').text(date + '- ')).appendTo($('#messagesDiv'));
+    $('<div/>').text('['+ date + '] - '+name + ' : '+text).css('fontSize','20px').appendTo($('#messagesDiv'));
     $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
 };
 
