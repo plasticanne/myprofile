@@ -23,10 +23,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!--<script src="jQueryAssets/jquery-1.11.1.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <!-- <script src="http://cdn.staticfile.org/jquery-easing/1.3/jquery.easing.min.js"></script> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
     <!-- <script src="js/jquery.mousewheel.min.js"></script> -->
     <!-- <script src="js/jquery.scrollify.min.js"></script> -->
     <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
@@ -50,10 +50,45 @@
 
         ////////main src="js/pagerun.js"
         pagerun();
-        ////////SVG src="js/svgrun.js"
-        svgrun();
-        ////////Petting iframe
-        $("#framepetting").append('<iframe src="petting.html" scrolling="no" allowtransparency="true"></iframe>');
+
+
+        ///////animation button
+        $(".anibtn").click(function() {
+            if ($(this).text() == "Load") {
+                $(this).text("Close");
+                $(this).nextAll(".animation").css("display", "inline");
+                if ($(this).nextAll("#framepetting").css("display") == "inline") {
+                    ////////Petting iframe
+                    $("#framepetting").css({
+                        "margin-left": "40px",
+                        "width": "95%",
+                        "height": "80%",
+                    });
+                    $("#framepetting").html('<iframe src="petting.html" scrolling="no" allowtransparency="true"></iframe>');
+
+                } else if ($(this).nextAll("#logo").css("display") == "inline") {
+                    ////////SVG src="js/svgrun.js"
+                    svgrun();
+                    $("#logo").css({
+                        "margin-top": "10 %",
+                        "margin-left": "20 %",
+                        "width": "30%",
+                        "position": "absolute",
+                    });
+                } else if ($(this).nextAll("#maincanvas").css("display") == "inline") {
+                    $("#maincanvas").css({
+                        "margin-left": "80px"
+                    });
+                    ////////canvas src="js/canvasrun.js"
+                    document.getElementById("maincanvas").addEventListener('mouseover', animate, false);
+                } else {}
+            } else {
+                $(this).text("Load");
+                $(this).nextAll(".animation").css("display", "none");
+            }
+        });
+
+
         ////////google chart src="js/gchart.js
         clickbtn("#goldprice", "#dashboard_div", gchart);
         ////////FB api and GA src="js/fbapi.js"
@@ -137,16 +172,21 @@
                     <div class="section" id="section1">
                         <img class="A_img" csrc="images/Quality.jpg" />
                         <div class="slide active slide1">
-                            <h1>SVG</h1>
-                            <div id="logo"></div>
+                            <h1>SVG Smil</h1>
+                            <button class="anibtn">Load</button>
+                            <div id="logo" class="animation"></div>
                         </div>
                         <div class="slide slide1">
-                            <h1>Canvas (None)</h1>
+                            <h1>Canvas PIXI.js</h1>
+                            <button class="anibtn">Load</button>
+                            <p>draw circles in the canvas !!</p>
+                            <canvas id="maincanvas" class="animation"></canvas>
                         </div>
                         <div class="slide slide1">
                             <h1>Alpha Webm Video (Chrome Only)</h1>
-                            <div id="framepetting">
-                                <p>slide your fist on her face !!</p>
+                            <button class="anibtn">Load</button>
+                            <p>slide your fist on her face !!</p>
+                            <div id="framepetting" class="animation">
                             </div>
                         </div>
                     </div>
@@ -190,8 +230,11 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="js/gchart.js"></script>
     <script type="text/javascript" src="js/fbapi.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script type="text/javascript" src="js/firebaseapi.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.0.0/pixi.min.js"></script>
+    <!-- <script type="text/javascript" src="js/tween.js"></script>-->
+    <script type="text/javascript" src="js/canvasrun.js"></script>
 </body>
 
 </html>

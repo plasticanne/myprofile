@@ -55,11 +55,7 @@ div.col-sm-9 {
     vertical-align: baseline;
 }
 
-#logo {
-    margin-top: 10%;
-    margin-left: 35%;
-    width: 30%;
-}
+
 
 #aaa {
     height: 2000px;
@@ -165,7 +161,6 @@ div.col-sm-3 {
     position: relative;
     height: 10%;
 }
-
 #framepetting,
 #s2view {
     position: relative;
@@ -175,6 +170,11 @@ div.col-sm-3 {
     //    background-color: #fff;
     overflow: hidden;
 }
+#maincanvas{
+    position: relative;
+    margin-left: 80px;
+    
+}
 
 #framepetting>iframe {
     position: relative;
@@ -183,8 +183,22 @@ div.col-sm-3 {
     top: 0%;
     margin-left: 15%;
     border: none;
+
+}
+#logo {
+    margin-top: 10%;
+    margin-left: 20%;
+    width: 30%;
+    
+    position: absolute;
 }
 
 #s2view iframe {
     z-index: -5;
+}
+.animation{
+    display: none;
+}
+.anibtn{
+    margin-left:20px;
 }
