@@ -37,6 +37,41 @@ div.col-sm-9 {
     padding: 0px;
 }
 
+#loading {
+    position: fixed;
+    z-index: 20;
+    padding-top: 20%;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: baseline;
+    pointer-events: none;
+}
+
+.glyphicon-refresh-animate {
+    -animation: loading .7s infinite linear;
+    -webkit-animation: loading2 .7s infinite linear;
+}
+
+@-webkit-keyframes loading2 {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes loading {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+    to {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
 #nameInput,
 #messageInput {
     visibility: inherit;
@@ -55,14 +90,16 @@ div.col-sm-9 {
     vertical-align: baseline;
 }
 
-
-
 #aaa {
     height: 2000px;
     margin: -6000px 0px 0px 0px;
 }
 
+div.col-sm-9{
+z-index: 1;
+}
 div.col-sm-9>div {
+
     margin: 0px;
     padding: 0px;
     font-size: 28px;
@@ -77,15 +114,17 @@ div.col-sm-3>#aaa>div {
 
 div.col-sm-3 {
     z-index: 2;
+
 }
 
 #section0,
 #section00 {
     color: #fff;
-    background-color: #000;
-    //background-image: url("../images/Ageeba.jpg");
+    background-color: transparent;
+//    background-image: url("../images/Ageeba.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 #section11,
@@ -97,7 +136,7 @@ div.col-sm-3 {
 #section11 {
     color: #fff;
     background-color: #1E88E5;
-    //background-image: url("../images/Quality.jpg");
+    background-image: url("../images/Quality.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -106,7 +145,7 @@ div.col-sm-3 {
 #section22 {
     color: #fff;
     background-color: #673ab7;
-    //background-image: url("../images/GMSGfGX.jpg");
+    background-image: url("../images/GMSGfGX.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -115,19 +154,42 @@ div.col-sm-3 {
 #section33 {
     color: #fff;
     background-color: #ff9800;
-    //background-image: url("../images/Nature.jpg");
+    background-image: url("../images/Nature.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
 .A_img {
     position: absolute;
-    top: 0px;
+    top:0px;
     left: -33.333%;
     //   width: 100%;
     //height: 100%;
 }
-
+#video1{
+    position: absolute;
+    top:0px;
+    left: -33.333%;
+    z-index: 0;
+    width: 1920px;
+}
+#video11{
+    top:0px;
+    left:0px;
+    width: 1920px;
+    overflow: hidden;
+    position: relative;
+    }
+#videodiv{
+    top: 0px;
+    left:0px;
+    right: 75%;
+z-index: -1;
+position: fixed;
+overflow: hidden;
+height: 100%;
+pointer-events: none;
+}
 .slide {
     position: relative;
 }
@@ -161,6 +223,7 @@ div.col-sm-3 {
     position: relative;
     height: 10%;
 }
+
 #framepetting,
 #s2view {
     position: relative;
@@ -170,10 +233,10 @@ div.col-sm-3 {
     //    background-color: #fff;
     overflow: hidden;
 }
-#maincanvas{
+
+#maincanvas {
     position: relative;
     margin-left: 80px;
-    
 }
 
 #framepetting>iframe {
@@ -183,22 +246,23 @@ div.col-sm-3 {
     top: 0%;
     margin-left: 15%;
     border: none;
-
 }
+
 #logo {
     margin-top: 10%;
-    margin-left: 20%;
+    margin-left: 30%;
     width: 30%;
-    
     position: absolute;
 }
 
 #s2view iframe {
     z-index: -5;
 }
-.animation{
+
+.animation {
     display: none;
 }
-.anibtn{
-    margin-left:20px;
+
+.anibtn {
+    margin-left: 20px;
 }
