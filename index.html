@@ -13,7 +13,7 @@
     <!--  <link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css"> -->
     <link href="css/jquery.fullPage.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
-    <style>
+    <style type="text/css">
 
     </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -30,6 +30,8 @@
     <!-- <script src="js/jquery.mousewheel.min.js"></script> -->
     <!-- <script src="js/jquery.scrollify.min.js"></script> -->
     <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="js/prefixfree.min.js"></script>
+    <script type="text/javascript" src="http://cdn.rawgit.com/LeaVerou/prefixfree/gh-pages/plugins/prefixfree.dynamic-dom.min.js"></script>
     <script type="text/javascript" src="js/pagerun.js"></script>
     <script type="text/javascript">
     function clickbtn(idname, divname, funname) {
@@ -48,7 +50,7 @@
     $(document).ready(function() {
         ////////main src="js/pagerun.js"
         pagerun();
-        if (videoFormatCheck()["webm"]!=true) {
+        if (videoFormatCheck()["webm"] != true) {
             $("#section0,#section00").css({
                 "background-color": "black",
                 'background-image': 'url("images/Ageeba.jpg")'
@@ -90,24 +92,25 @@
             } else {
                 $(this).text("Load");
                 $(this).nextAll(".animation").css("display", "none");
+                $(this).nextAll("#logoframe") && (svgoff())
             }
         });
 
-
-        ////////google chart src="js/gchart.js
-        clickbtn("#goldprice", "#dashboard_div", gchart);
-        ////////FB api and GA src="js/fbapi.js"
-        clickbtn("#fbapi", "#fbapi_div", getFb);
-        clickfbbutton("#FBgen", {
-            fields: "gender,birthday"
-        }, "gender");
-        clickfbbutton("#FBbir", {
-            fields: "gender,birthday"
-        }, "birthday");
-        ////////Chat Room
-        clickbtn("#chatroom", "#chatroom_div");
-        $('#messageInput').keypress(chatkey);
-
+        /*
+                ////////google chart src="js/gchart.js
+                clickbtn("#goldprice", "#dashboard_div", gchart);
+                ////////FB api and GA src="js/fbapi.js"
+                clickbtn("#fbapi", "#fbapi_div", getFb);
+                clickfbbutton("#FBgen", {
+                    fields: "gender,birthday"
+                }, "gender");
+                clickfbbutton("#FBbir", {
+                    fields: "gender,birthday"
+                }, "birthday");
+                ////////Chat Room
+                clickbtn("#chatroom", "#chatroom_div");
+                $('#messageInput').keypress(chatkey);
+        */
 
 
 
@@ -237,10 +240,12 @@
             </div>
         </div>
     </div>
+    <!--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.3.4/svg.min.js"></script>-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
     <script type="text/javascript" src="js/svgrun.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="js/gchart.js"></script>
-    <script type="text/javascript" src="js/fbapi.js"></script>
+    <!--    <script type="text/javascript" src="js/fbapi.js"></script> -->
     <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script type="text/javascript" src="js/firebaseapi.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.0.0/pixi.min.js"></script>

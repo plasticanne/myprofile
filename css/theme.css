@@ -50,25 +50,28 @@ div.col-sm-9 {
 }
 
 .glyphicon-refresh-animate {
-    -animation: loading .7s infinite linear;
-    -webkit-animation: loading2 .7s infinite linear;
+    -webkit-animation: loading .7s infinite linear;
+            animation: loading .7s infinite linear;
 }
 
-@-webkit-keyframes loading2 {
+@-webkit-keyframes loading {
     from {
-        -webkit-transform: rotate(0deg);
+        -webkit-transform: scale(1) rotate(0deg);
+                transform: scale(1) rotate(0deg);
     }
     to {
-        -webkit-transform: rotate(360deg);
+        -webkit-transform: scale(1) rotate(360deg);
+                transform: scale(1) rotate(360deg);
     }
 }
-
 @keyframes loading {
     from {
-        transform: scale(1) rotate(0deg);
+        -webkit-transform: scale(1) rotate(0deg);
+                transform: scale(1) rotate(0deg);
     }
     to {
-        transform: scale(1) rotate(360deg);
+        -webkit-transform: scale(1) rotate(360deg);
+                transform: scale(1) rotate(360deg);
     }
 }
 
@@ -253,6 +256,7 @@ pointer-events: none;
     margin-left: 30%;
     width: 30%;
     position: absolute;
+    display: inherit;
 }
 
 #s2view iframe {

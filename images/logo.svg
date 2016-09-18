@@ -1,16 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+    "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg id="logo1" data-name="logoname1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 299.82 345.92">
+ 
     <defs>
-        <style>
+        <style type="text/css">
         .cls-1 {
             fill: url(#grad_10);
+            background: linear-gradient(43deg, #e30000, #380606);
             fill-opacity: 0;
             -webkit-animation: opa1 5s infinite alternate;
-            -o-animation: opa1 5s linear infinite alternate;
-            -moz-animation: opa1 5s linear infinite alternate;
             animation: opa1 5s linear infinite alternate;
         }
         
         @-webkit-keyframes opa1 {
+            from {
+                fill-opacity: 0;
+            }
+            to {
+                fill-opacity: 1;
+            }
+        }
+        
+        @keyframes opa1 {
+            from {
+                fill-opacity: 0;
+            }
             to {
                 fill-opacity: 1;
             }
@@ -30,12 +45,22 @@
             stroke-dasharray: 100%;
             stroke-dashoffset: 0;
             -webkit-animation: dash0 5s infinite;
-            -o-animation: dash0 5s linear infinite;
-            -moz-animation: dash0 5s linear infinite;
             animation: dash0 5s linear infinite;
         }
         
         @-webkit-keyframes dash0 {
+            from {
+                stroke-dashoffset: 0%;
+            }
+            to {
+                stroke-dashoffset: 200%;
+            }
+        }
+        
+        @keyframes dash0 {
+            from {
+                stroke-dashoffset: 0%;
+            }
             to {
                 stroke-dashoffset: 200%;
             }
@@ -45,12 +70,22 @@
             stroke-dasharray: 20%, 20%;
             stroke-dashoffset: 0;
             -webkit-animation: dash1 10s infinite;
-            -o-animation: dash1 10s linear infinite;
-            -moz-animation: dash1 10s linear infinite;
             animation: dash1 10s linear infinite;
         }
         
         @-webkit-keyframes dash1 {
+            from {
+                stroke-dashoffset: 0%;
+            }
+            to {
+                stroke-dashoffset: 120%;
+            }
+        }
+        
+        @keyframes dash1 {
+            from {
+                stroke-dashoffset: 0%;
+            }
             to {
                 stroke-dashoffset: 120%;
             }
@@ -61,17 +96,17 @@
             fill-opacity: 1;
         }
         </style>
-        <linearGradient id="grad_10" x1="0%" y1="226.77" x2="0%" y2="226.77" gradientUnits="userSpaceOnUse">
-            <animate attributeName="x1" values="0%;100%;0%" dur="2s" repeatCount="indefinite" />
-            <animate attributeName="x2" values="100%;200%;100%" dur="2s" repeatCount="indefinite" />
+        <linearGradient id="grad_10" x1="0" y1="1" x2="0" y2="1">
+<!--                    <animate attributeName="x1" values="0%;100%;0%" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="x2" values="100%;200%;100%" dur="2s" repeatCount="indefinite" />-->
             <stop offset="0" stop-color="#fff" />
             <stop offset="1" stop-color="#000" />
         </linearGradient>
-        <radialGradient id="grad_11" cx="0%" cy="90%" r="80%">
-            <animate attributeName="cx" values="0%;100%;50%;0%" dur="20s" repeatCount="indefinite" />
-            <animate attributeName="cy" values="90%;90%;20%;90%" dur="20s" repeatCount="indefinite" />
-            <stop stop-color="#fff" offset="0" />
-            <stop stop-color="#000" offset="100%" />
+        <radialGradient id="grad_11" cx="0%" cy="0.9" r="0.8">
+            <!--            <animate attributeName="cx" values="0%;100%;50%;0%" dur="20s" repeatCount="indefinite" />
+            <animate attributeName="cy" values="90%;90%;20%;90%" dur="20s" repeatCount="indefinite" />-->
+            <stop stop-color="#ff0000" offset="0" />
+            <stop stop-color="#000" offset="1" />
         </radialGradient>
     </defs>
     <title>logo</title>
@@ -79,4 +114,5 @@
     <path id="svgline0" class="cls-2" d="M430.87,311.67c-24.57-31.13-49.14-13.08-73.7,12.83-24.57,26.55-49.14,58.78-73.7,72.35-24.57-14.83-49.14-11-73.7-12.83-24.57-2.48-49.14-12.83-73.7-72.35V226.49q0-42.59,0-85.18c24.57,30.93,49.14,12.74,73.7-13.17,24.57-26.25,49.14-58.07,73.7-71.46C308,71.33,332.6,67.53,357.17,69.3c24.57,2.49,49.14,12.7,73.7,72V311.67Z" transform="translate(-133.56 -53.82)" />
     <path class="cls-3" d="M380.87,283.07l-49,28.33-18.44,10.66a42,42,0,0,1-5.66,2.93C311,291,353,265,331,229c-10-17-36-24-50-7-4,6-5,16,2,20-2-12,6-24,18-25,10-1,19,5,25,12,10,13,10,29,2,43-17,26-45,34-71,49-7,3-10,11-12,18-4,15-29,3-39-8-8-10-7-23-15-31-2-3-10,3-13-2-8-10,6-19,6.77-29.62V191.07C185,187,185,183,187,179c12.75,20.25,32.81,38.81,55.55,47.67a25.36,25.36,0,0,1,3,8.2C246,253,257,270,272,278c-19-11-27-34-25-55.22-2.53-2.72-5.16-5-7.61-7.45-22-22.08-29.16-58.08-10.41-87.33,1-2,0-4-2-5-11-1-18,8-25,15,4.2-17.4,18.84-29.76,35.93-35.14,2.85-.9,5.76-1.6,7.61-.67C237,121,226,141,235,162c8,20,33,30,52,17,8-6,11-15,10-25s-10-16-19-17c-16-1-17,21-29,22-13,2-13-19-9-30,7-18,25-28,43-33,21-5,40,6,56,20,6,6,10-4,10-10,9,3.5,12.75,11.5,13.78,20.47a54.72,54.72,0,0,1,.21,9.17C343,146,323,167,332,192c6,15,23,25,38,20,9-4,19-11,20-22,0-11,1-26-11-31-15-6-31,5-34,20-1-6,1-12,5-17,10-12,27-13,40-7,23,11,28,37,26,60-2,18-16,32-31.63,40.25-2.26,2.09-2.76,4.35-3.49,6.5Z" transform="translate(-133.56 -53.82)" />
     <path id="svgline1" class="cls-2" d="M380.87,283.07l-49,28.33-18.44,10.66a42,42,0,0,1-5.66,2.93C311,291,353,265,331,229c-10-17-36-24-50-7-4,6-5,16,2,20-2-12,6-24,18-25,10-1,19,5,25,12,10,13,10,29,2,43-17,26-45,34-71,49-7,3-10,11-12,18-4,15-29,3-39-8-8-10-7-23-15-31-2-3-10,3-13-2-8-10,6-19,6.77-29.62V191.07C185,187,185,183,187,179c12.75,20.25,32.81,38.81,55.55,47.67a25.36,25.36,0,0,1,3,8.2C246,253,257,270,272,278c-19-11-27-34-25-55.22-2.53-2.72-5.16-5-7.61-7.45-22-22.08-29.16-58.08-10.41-87.33,1-2,0-4-2-5-11-1-18,8-25,15,4.2-17.4,18.84-29.76,35.93-35.14,2.85-.9,5.76-1.6,7.61-.67C237,121,226,141,235,162c8,20,33,30,52,17,8-6,11-15,10-25s-10-16-19-17c-16-1-17,21-29,22-13,2-13-19-9-30,7-18,25-28,43-33,21-5,40,6,56,20,6,6,10-4,10-10,9,3.5,12.75,11.5,13.78,20.47a54.72,54.72,0,0,1,.21,9.17C343,146,323,167,332,192c6,15,23,25,38,20,9-4,19-11,20-22,0-11,1-26-11-31-15-6-31,5-34,20-1-6,1-12,5-17,10-12,27-13,40-7,23,11,28,37,26,60-2,18-16,32-31.63,40.25-2.26,2.09-2.76,4.35-3.49,6.5Z" transform="translate(-133.56 -53.82)" />
+
 </svg>
