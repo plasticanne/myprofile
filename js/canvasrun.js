@@ -234,7 +234,7 @@ function animate() {
     stage.on(supportTouch && ('touchstart') || ('mousedown'), function(e) {
             mouseMode = 1
         })
-        .on(supportTouch && ('touchmove') || ('mousedown'), function(e) {
+        .on(supportTouch && ('touchmove') || ('mousemove'), function(e) {
             if (mouseMode == 1) {
                 var drag = new DragCircleSize(downx, downy, e.data.global.x, e.data.global.y);
                 /*overx = range(0, e.data.global.x, RENDERER_W);
