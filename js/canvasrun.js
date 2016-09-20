@@ -86,8 +86,8 @@ MoveSpriteS.prototype.circlesFall = function() {
     };
 };
 ////////////////////////////
-var RENDERER_W = 500
-var RENDERER_H = 500
+var RENDERER_W = $(window).width() * 0.65;
+var RENDERER_H = $(window).height() * 0.6;
 var renderer = new PIXI.autoDetectRenderer(RENDERER_W, RENDERER_H, {
     view: document.getElementById('maincanvas'),
     antialias: false,
@@ -157,7 +157,10 @@ var timer;
 //rect.on('click', function(e){console.log(e.data.global,e.data.originalEvent)});
 //stage.on('click', function(e){console.log(e.data.global,e.data.originalEvent)});
 
-stage.on('mousedown', function(e) {
+
+
+
+stage.on(supportTouch && ('touchstart') || ('mousedown'), function(e) {
     downx = new DragCircleSize().range(0, e.data.global.x, RENDERER_W);
     downy = new DragCircleSize().range(0, e.data.global.y, RENDERER_H);
 
@@ -180,8 +183,7 @@ stage.on('mousedown', function(e) {
 
 var drag;
 
-stage.on('click', function(e) {
-
+stage.on(supportTouch && ('touchend') || ('mouseup'), function(e) {
     //消去 sprite0
     sprite0.reSetSprite(null, null, 0, 0);
     /*sprite0.scale.x = 0;
@@ -229,10 +231,10 @@ function animate() {
     graphics0.clear();
     count += 0.1;
 
-    stage.on('mousedown', function(e) {
+    stage.on(supportTouch && ('touchstart') || ('mousedown'), function(e) {
             mouseMode = 1
         })
-        .on('mousemove', function(e) {
+        .on(supportTouch && ('touchmove') || ('mousedown'), function(e) {
             if (mouseMode == 1) {
                 var drag = new DragCircleSize(downx, downy, e.data.global.x, e.data.global.y);
                 /*overx = range(0, e.data.global.x, RENDERER_W);
@@ -246,7 +248,7 @@ function animate() {
                 sprite0.scale.y = r / 100;*/
             }
         })
-        .on('mouseup', function(e) {
+        .on(supportTouch && ('touchend') || ('mouseup'), function(e) {
             sprite0.reSetSprite(null, null, 0, 0);
             /*sprite0.scale.x = 0;
             sprite0.scale.y = 0;*/
@@ -275,8 +277,9 @@ function animate() {
     renderer.render(stage);
     timer = requestAnimationFrame(animate);
     // 離開滑鼠區停止動畫
-    stage.on('mouseout', function() {
+    
+    /*supportTouch || (stage.on('mouseout', function() {
         cancelAnimationFrame(timer)
-    });
+    }));*/
 };
 //  animate()

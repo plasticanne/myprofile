@@ -47,7 +47,12 @@
         });
     };
 
+    function supportTouchEvent() {
+        return !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
+    }
+    var supportTouch = supportTouchEvent();
     $(document).ready(function() {
+        //  $(window).load(function() {
         ////////main src="js/pagerun.js"
         pagerun();
         if (videoFormatCheck()["webm"] != true) {
@@ -58,6 +63,22 @@
             $("#videodiv").remove();
             $("#section0").append('<img class="A_img" src="images/Ageeba.jpg" />');
         }
+        if ($(window).width() < 768) {
+
+            $(".nav-pills > li > a").click(function() {
+                var aaadiv = $('#aaa>div');
+                var thisdiv = aaadiv.eq(aaadiv.length - $(".nav-pills > li").index($(this).parent()) - 1);
+                if (thisdiv.css("display") == "none") {
+                    aaadiv.css("display", "none");
+                    thisdiv.css("display", "block");
+                } else {
+                    aaadiv.css("display", "none");
+                }
+            });
+
+        };
+
+
 
         ///////loading
         $(window).load(function() {
@@ -66,37 +87,64 @@
             }, 200);
         });
         ///////animation button
+
         $(".anibtn").click(function() {
             if ($(this).text() == "Load") {
                 $(this).text("Close");
                 $(this).nextAll(".animation").css("display", "inline");
                 if ($(this).nextAll("#framepetting").css("display") == "inline") {
                     ////////Petting iframe
-                    $("#framepetting").css({
-                        "margin-left": "40px",
-                        "width": "95%",
-                        "height": "80%",
-                    });
+                    if ($(window).width() < 768) {
+                        $("#framepetting").css({
+                            "margin-left": "-40px"
+                        });
+                    } else {
+                        $("#framepetting").css({
+                            "margin-left": "0px",
+                        });
+                    };
                     $("#framepetting").html('<iframe src="petting.html" scrolling="no" allowtransparency="true"></iframe>');
 
                 } else if ($(this).nextAll("#logoframe").css("display") == "inline") {
                     ////////SVG src="js/svgrun.js"
                     svgrun();
                 } else if ($(this).nextAll("#maincanvas").css("display") == "inline") {
-                    $("#maincanvas").css({
-                        "margin-left": "80px"
-                    });
+                    if ($(window).width() < 768) {
+                        $("#maincanvas").css({
+                            "margin-left": "55px"
+                        });
+                    } else {
+                        $("#maincanvas").css({
+                            "margin-left": "80px"
+                        });
+                    };
                     ////////canvas src="js/canvasrun.js"
-                    document.getElementById("maincanvas").addEventListener('mouseover', animate, false);
+                    document.getElementById("maincanvas").addEventListener('mouseover', function() {
+                        /*$("#fullpage").fullpage({
+                            "autoScrolling": false
+                        });*/
+                        /*document.body.addEventListener('touchmove', function (event) {
+event.preventDefault(); }, false);*/
+                        animate();
+                    }, false);
+
+                    if (supportTouch) {
+                        $("#fullpage").fullpage.setAllowScrolling(false);
+                        animate();
+                    }
                 } else {}
             } else {
                 $(this).text("Load");
+                if ($(this).nextAll("#logoframe").css("display") == "inline") {
+                    svgoff()
+                };
                 $(this).nextAll(".animation").css("display", "none");
-                $(this).nextAll("#logoframe") && (svgoff())
+                $("#fullpage").fullpage.setAllowScrolling(true);
+
             }
         });
 
-        /*
+        
                 ////////google chart src="js/gchart.js
                 clickbtn("#goldprice", "#dashboard_div", gchart);
                 ////////FB api and GA src="js/fbapi.js"
@@ -110,7 +158,7 @@
                 ////////Chat Room
                 clickbtn("#chatroom", "#chatroom_div");
                 $('#messageInput').keypress(chatkey);
-        */
+        
 
 
 
@@ -123,10 +171,10 @@
     <div id="fb-root"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12" id="loading">
+            <div class="col-sm-12 col-xs-12" id="loading">
                 <h1><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>Loading...</h1>
             </div>
-            <div class="col-sm-3">
+            <div id="left-xs" class="col-sm-3 ">
                 <div id="aaa">
                     <div class="leftdiv" id="section33">
                         <h1>Section 3</h1>
@@ -160,7 +208,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-9 col-xs-12 ">
                 <nav id="Scrollspy">
                     <ol class="nav nav-pills nav-stacked">
                         <li data-menuanchor="sectiona0" class="active">
@@ -186,20 +234,20 @@
                         <img class="A_img" src="images/Quality.jpg" />
                         <div class="slide active slide1">
                             <h1>SVG Smil</h1>
-                            <button class="anibtn">Load</button>
+                            <button class="anibtn  btn-default">Load</button>
                             <div id="logoframe" class="animation">
                                 <div id="logo"></div>
                             </div>
                         </div>
                         <div class="slide slide1">
                             <h1>Canvas PIXI.js</h1>
-                            <button class="anibtn">Load</button>
+                            <button class="anibtn  btn-default">Load</button>
                             <p>draw circles in the canvas !!</p>
                             <canvas id="maincanvas" class="animation"></canvas>
                         </div>
                         <div class="slide slide1">
                             <h1>Alpha Webm Video (Chrome Only)</h1>
-                            <button class="anibtn">Load</button>
+                            <button class="anibtn  btn-default">Load</button>
                             <p>slide your fist on her face !!</p>
                             <div id="framepetting" class="animation">
                             </div>
@@ -245,7 +293,7 @@
     <script type="text/javascript" src="js/svgrun.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="js/gchart.js"></script>
-    <!--    <script type="text/javascript" src="js/fbapi.js"></script> -->
+    <script type="text/javascript" src="js/fbapi.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script type="text/javascript" src="js/firebaseapi.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.0.0/pixi.min.js"></script>

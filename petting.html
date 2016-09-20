@@ -11,11 +11,12 @@
     .Standby,
     .Petting {
         position: fixed;
-        top: -100px;
+        top: -20%;
         left: 0px;
-        width: 500px;
-        height: 800px;
+        //width: 500px;
+        //height: 800px;
         //  background-color: #FFF;
+        height: 140%;
     }
     
     .Standby {
@@ -28,13 +29,13 @@
     }
     
     #_mouse {
-        //  border: 2px solid #fff;
+       // border: 2px solid #fff;
         z-index: 500;
-        position: fixed;
-        top: 0px;
-        left: 50px;
-        width: 400px;
-        height: 400px;
+        position: absolute;
+        top: 0%;
+        left: 10%;
+        width: 80%;
+        height: 60%;
         cursor: url('images/01.png'), default;
     }
     
@@ -42,7 +43,7 @@
         display: none;
     }
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript">
     document.ondragstart = function() {
         return false;
@@ -99,6 +100,21 @@
 
             };
         });
+        _mouse.bind('touchstart', function(e) {
+            Standby1.css("display", "none");
+            Petting1.css("display", "block");
+            Petting1[0].currentTime = 0;
+            Petting1[0].play();
+            document.getElementById("Petting1").addEventListener('ended', myHandler, false);
+
+            function myHandler(e) {
+                Petting1.css("display", "none");
+                Standby1.css("display", "block");
+                Standby1[0].currentTime = 0;
+                Standby1[0].play();
+            };
+        });
+
         //  document.getElementById("_mouse").addEventListener('mousemove',mousedistance,false);
         //  function mousedistance(e) {
 

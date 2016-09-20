@@ -14,10 +14,13 @@ var pagerun;
         afterLoad: function(anchorLink, index) {
             //                var screenh = $(window).height();
             //                $("#section1").css("background-position", "0px " + screenh + "px");
-            if ($('#aaa').css("marginTop") != leftdiv[index - 1]) {
-                $('#aaa').velocity("stop", true).velocity({
-                    marginTop: leftdiv[index - 1] + "px"
-                }, 800)
+            if ($(window).width() < 768) {
+            } else {
+                if ($('#aaa').css("marginTop") != leftdiv[index - 1]) {
+                    $('#aaa').velocity("stop", true).velocity({
+                        marginTop: leftdiv[index - 1] + "px"
+                    }, 800)
+                };
             };
             if (anchorLink == 'sectiona0') {
                 $('#video1')[0].play();
@@ -26,13 +29,25 @@ var pagerun;
         //        afterSlideLoad: function(anchorLink, index, slideIndex, direction, bbbbbb) {
         //            $('#video1')[0].play();
         //        },
-        //        afterRender: function() {
-        //            $('#video1')[0].play();
-        //        },
-        //        afterResize: function() {
-        //            $('#video1')[0].play();
-        //        },
+       // afterRender: function() {
+            //  $('#video1')[0].play();
+       // },
+        onLeave: function(index, nextIndex, direction) {
+            if ($(window).width() < 768) {
+                var aaadiv = $('#aaa>div');
+                var thisdiv = aaadiv.eq(aaadiv.length - nextIndex);
+                aaadiv.css("display", "none");
+                thisdiv.css("display", "block");
+            }
+        },
+    //    afterResize: function() {
+            //  $('#video1')[0].play();
+     //   },
     });
+
+
+
+
 });
 
 function videoFormatCheck() {

@@ -13,6 +13,12 @@ ol.nav-pills a {
     margin: 10px;
 }
 
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+}
+
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
@@ -51,27 +57,28 @@ div.col-sm-9 {
 
 .glyphicon-refresh-animate {
     -webkit-animation: loading .7s infinite linear;
-            animation: loading .7s infinite linear;
+    animation: loading .7s infinite linear;
 }
 
 @-webkit-keyframes loading {
     from {
         -webkit-transform: scale(1) rotate(0deg);
-                transform: scale(1) rotate(0deg);
+        transform: scale(1) rotate(0deg);
     }
     to {
         -webkit-transform: scale(1) rotate(360deg);
-                transform: scale(1) rotate(360deg);
+        transform: scale(1) rotate(360deg);
     }
 }
+
 @keyframes loading {
     from {
         -webkit-transform: scale(1) rotate(0deg);
-                transform: scale(1) rotate(0deg);
+        transform: scale(1) rotate(0deg);
     }
     to {
         -webkit-transform: scale(1) rotate(360deg);
-                transform: scale(1) rotate(360deg);
+        transform: scale(1) rotate(360deg);
     }
 }
 
@@ -98,11 +105,11 @@ div.col-sm-9 {
     margin: -6000px 0px 0px 0px;
 }
 
-div.col-sm-9{
-z-index: 1;
+div.col-sm-9 {
+    z-index: 1;
 }
-div.col-sm-9>div {
 
+div.col-sm-9>div {
     margin: 0px;
     padding: 0px;
     font-size: 28px;
@@ -117,14 +124,13 @@ div.col-sm-3>#aaa>div {
 
 div.col-sm-3 {
     z-index: 2;
-
 }
 
 #section0,
 #section00 {
     color: #fff;
     background-color: transparent;
-//    background-image: url("../images/Ageeba.jpg");
+    //    background-image: url("../images/Ageeba.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -164,39 +170,45 @@ div.col-sm-3 {
 
 .A_img {
     position: absolute;
-    top:0px;
+    top: 0px;
     left: -33.333%;
     //   width: 100%;
     //height: 100%;
 }
-#video1{
+
+#video1 {
     position: absolute;
-    top:0px;
+    top: 0px;
     left: -33.333%;
     z-index: 0;
     width: 1920px;
 }
-#video11{
-    top:0px;
-    left:0px;
+
+#video11 {
+    top: 0px;
+    left: 0px;
     width: 1920px;
     overflow: hidden;
     position: relative;
-    }
-#videodiv{
-    top: 0px;
-    left:0px;
-    right: 75%;
-z-index: -1;
-position: fixed;
-overflow: hidden;
-height: 100%;
-pointer-events: none;
 }
+
+#videodiv {
+    top: 0px;
+    left: 0px;
+    right: 75%;
+    z-index: -1;
+    position: fixed;
+    overflow: hidden;
+    height: 100%;
+    pointer-events: none;
+}
+
 .slide {
     position: relative;
 }
 
+
+/*
 @media screen and (max-width: 810px) {
     #section0,
     #section1,
@@ -206,6 +218,7 @@ pointer-events: none;
         margin-left: 150px;
     }
 }
+*/
 
 #chatroom_div,
 #dashboard_div,
@@ -227,7 +240,6 @@ pointer-events: none;
     height: 10%;
 }
 
-#framepetting,
 #s2view {
     position: relative;
     margin-left: 40px;
@@ -269,4 +281,87 @@ pointer-events: none;
 
 .anibtn {
     margin-left: 20px;
+}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (max-width: 767px) {
+    p {
+        padding: 5px
+    }
+    ol.nav-pills {
+        z-index: 50;
+        bottom: 1%;
+        position: fixed;
+    }
+    ol.nav-pills a {
+        border: 2px solid #fff;
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        padding: 0px;
+        margin: 20px;
+    }
+    .nav-pills > li.active > a,
+    .nav-pills > li.active > a:hover,
+    .nav-pills > li.active > a:focus {
+        border: 0px;
+        border-radius: 0px;
+        width: 35px;
+        height: 35px;
+        color: #fff;
+        background-color: #fff;
+        background: url(../images/clippy.svg);
+        background-size: 35px 35px;
+    }
+    #videodiv {
+        display: none;
+    }
+    #aaa {
+        position: fixed;
+        height: 50%;
+        width: 100%;
+        margin: 0px;
+        display: block;
+        z-index: 40;
+        left: 55px;
+        bottom: 0px;
+        pointer-events: none;
+        background: transparent;
+    }
+    #aaa * {
+        z-index: inherit;
+    }
+    #aaa>div {
+        border: 2px solid #fff;
+        border-radius: 10px;
+        position: absolute;
+        height: auto;
+        display: none;
+        background-image: none;
+        color: #fff;
+        background-color: #000;
+        pointer-events: all;
+    }
+    #aaa>#section00 {
+        display: block;
+    }
+    #s2view {
+        width: 90%;
+        padding-left: 20px;
+        padding-right: 30px;
+        height: 90%;
+    }
+    #logo {
+        margin-top: 10%;
+        margin-left: 5%;
+        width: 40%;
+    }
+    #framepetting>iframe {
+        position: relative;
+        width: 75%;
+        height: 50%;
+        margin-left: 25%;
+        border: none;
+    }
 }
