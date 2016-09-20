@@ -278,8 +278,8 @@ function animate() {
     timer = requestAnimationFrame(animate);
     // 離開滑鼠區停止動畫
     
-    /*supportTouch || (stage.on('mouseout', function() {
+    supportTouch || (stage.on('mouseout', function() {
         cancelAnimationFrame(timer)
-    }));*/
+    }));
 };
 //  animate()
