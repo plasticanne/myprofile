@@ -1,4 +1,4 @@
-var gchart;
+export var gchart;
 (gchart = function() {
 
     function dataArray(json) {

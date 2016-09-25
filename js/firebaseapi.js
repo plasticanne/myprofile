@@ -10,7 +10,7 @@ firebase.initializeApp(fireconfig);
 // Get a reference to the database service
 var myDataRef = firebase.database();
 
-function chatkey(e) {
+export function chatkey(e) {
 
     if (e.keyCode == 13) {
         var name

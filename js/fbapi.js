@@ -65,7 +65,7 @@ window.fbAsyncInit = function() {
 ga('create', 'UA-83665709-1', 'auto');
 ga('send', 'pageview');
 
-function clickfbbutton(id, fields, res) {
+export var clickfbbutton=function (id, fields, res) {
     $('#fbapi_div2').on("click", id, function() {
         FB.api('/me', fields, function(response) {
             if (checkLoginState()) {
@@ -99,7 +99,7 @@ function clickfbbutton(id, fields, res) {
 };
 
 
-var getFb;
+export var getFb;
 (getFb = function() {
     var fbButton = '<p><button id="FBgen" class="btn btn-default">Get your FB gender</button></p><h1></h1><p><button id="FBbir" class="btn btn-default">Get your FB birth year</button></p><h1></h1>'
     $('#fbapi_div2').html(fbButton);

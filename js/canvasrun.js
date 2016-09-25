@@ -3,6 +3,7 @@
  *@date 2016/9/14
  *@fileoverview
  */
+import  * as m from "./machine.js";
 //class  MakeTexture
 function MakeTexture() {
     PIXI.Graphics.call(this);
@@ -107,7 +108,7 @@ stage.addChild(container);
 
 // 創建 click區
 //var info = new PIXI.interaction.InteractionData()
-rect = new MakeTexture();
+var rect = new MakeTexture();
 rect.clickArea(1, 0x000);
 stage.addChild(rect);
 /*var rect = new PIXI.Graphics();
@@ -158,7 +159,7 @@ var timer;
 //stage.on('click', function(e){console.log(e.data.global,e.data.originalEvent)});
 
 
-
+var supportTouch=m.supportTouch
 
 stage.on(supportTouch && ('touchstart') || ('mousedown'), function(e) {
     downx = new DragCircleSize().range(0, e.data.global.x, RENDERER_W);
@@ -227,7 +228,7 @@ stage.on(supportTouch && ('touchend') || ('mouseup'), function(e) {
 
 
 
-function animate() {
+export function animate() {
     graphics0.clear();
     count += 0.1;
 

@@ -132,7 +132,6 @@ div.col-sm-3 {
     background-color: transparent;
     //    background-image: url("../images/Ageeba.jpg");
     background-attachment: fixed;
-    background-repeat: no-repeat;
     overflow: hidden;
 }
 
@@ -146,7 +145,6 @@ div.col-sm-3 {
     color: #fff;
     background-color: #1E88E5;
     background-image: url("../images/Quality.jpg");
-    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
@@ -155,7 +153,6 @@ div.col-sm-3 {
     color: #fff;
     background-color: #673ab7;
     background-image: url("../images/GMSGfGX.jpg");
-    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
@@ -164,8 +161,14 @@ div.col-sm-3 {
     color: #fff;
     background-color: #ff9800;
     background-image: url("../images/Nature.jpg");
-    background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+#section00,
+#section11,
+#section22,
+#section33 {
+    background-repeat: no-repeat;
 }
 
 .A_img {

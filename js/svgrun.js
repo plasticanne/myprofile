@@ -1,5 +1,5 @@
-var svgrun;
-var svgoff;
+export var svgrun;
+export var svgoff;
 (svgrun = function() {
     $('#logo').load('images/logo.svg', null, function() {
         /*
