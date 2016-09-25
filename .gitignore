@@ -11,5 +11,5 @@ js/jquery.fullPage.js
 js/jquery.mousewheel.min.js
 js/jquery.scrollify.min.js
 
-
+node_modules/*
 
