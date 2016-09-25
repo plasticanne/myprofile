@@ -1,10 +1,9 @@
 var pagerun;
-
 (pagerun = function() {
-    var leftdivlengh = $('#aaa').children("div").length
-    var leftdiv = {}
+    var leftdivlengh = $('#aaa').children("div").length;
+    var leftdiv = {};
     for (var i = 0; i < leftdivlengh; i++) {
-        leftdiv[i] = parseInt(-1 * ((leftdivlengh - (i + 1))) * parseInt($("div.col-sm-3 div").css("height")))
+        leftdiv[i] = parseInt(-1 * ((leftdivlengh - (i + 1))) * parseInt($("#aaa>div").css("height")));
     };
 
 
@@ -16,14 +15,15 @@ var pagerun;
             //                $("#section1").css("background-position", "0px " + screenh + "px");
             if ($(window).width() < 768) {
             } else {
-                if ($('#aaa').css("marginTop") != leftdiv[index - 1]) {
+                if ($('#aaa').css("marginTop") != leftdiv[index -1]) {
+
                     $('#aaa').velocity("stop", true).velocity({
-                        marginTop: leftdiv[index - 1] + "px"
+                        marginTop: leftdiv[index-1 ] + "px"
                     }, 800)
                 };
             };
             if (anchorLink == 'sectiona0') {
-                $('#video1')[0].play();
+                (videoFormatCheck()["webm"] != true || (chrome==true && android==true) ) || $('#video1')[0].play();
             };
         },
         //        afterSlideLoad: function(anchorLink, index, slideIndex, direction, bbbbbb) {
