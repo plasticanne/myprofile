@@ -68,7 +68,7 @@ function MoveSpriteS(container, spriteArray) {
     this.container = container;
 };
 MoveSpriteS.prototype.circlesFall = function() {
-    for (i = 0; i < this.container.children.length; i++) {
+    for (var i = 0; i < this.container.children.length; i++) {
         var t = count - this.spriteArray[i].start
         var r = this.spriteArray[i].r;
         var x = this.spriteArray[i].x;

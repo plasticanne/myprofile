@@ -5,7 +5,6 @@
  import { chatkey } from "./firebaseapi.js";
  import { svgrun,svgoff } from "./svgrun.js";
  import { animate } from "./canvasrun.js";
-console.log(window.matchMedia('(max-width: 767px)').matches);
  function clickbtn(idname, divname, funname) {
      $(idname).click(function() {
          $("#s2view>div,#s2view>div iframe").css("visibility", "hidden");
@@ -19,11 +18,9 @@ console.log(window.matchMedia('(max-width: 767px)').matches);
      });
  };
 
-
  $(document).ready(function() {
-     //  $(window).load(function() {
+    //   $(window).load(function() {
      ////////main src="js/pagerun.js"
-
      pagerun();
      if (videoFormatCheck()["webm"] != true || (chrome == true && android == true)) {
          $("#section0,#section00").css({
