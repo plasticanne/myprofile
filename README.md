@@ -1,28 +1,27 @@
-# myprofile
-my profile website
-http://myprofiletest1.byethost7.com/
-³o¬O§Ú¤@¨Ç«eºİ¤u¨ãªºÀ³¥Îºt¥ÜDemo
+# myprofile  
+http://myprofiletest1.byethost7.com/  
+é€™æ˜¯æˆ‘ä¸€äº›å‰ç«¯å·¥å…·çš„æ‡‰ç”¨æ¼”ç¤ºDemo  
 
-¥D­¶:
-bootstrap 3
-jquery 1.11
-velocity.js
-fullPage.js
+ä¸»é :  
+bootstrap 3  
+jquery 1.11  
+velocity.js  
+fullPage.js  
 
-SVG:
-snap.svg
+SVG:  
+snap.svg  
 
-Canvas:
-PIXI v4
+Canvas:  
+PIXI v4  
 
-¨ä¥Lapi:
-FB js SDK
-google chart
-firebase api
+å…¶ä»–api:  
+FB js SDK  
+google chart  
+firebase api  
 
-es6»P¼Ò²Õ¤Æ:
-babel
-webpack
+es6èˆ‡æ¨¡çµ„åŒ–:  
+babel  
+webpack  
 
-¥¼¨Ó¹w­p:
-react
+æœªä¾†é è¨ˆ:  
+react  
