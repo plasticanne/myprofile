@@ -1,9 +1,9 @@
 # myprofile
 my profile website
 http://myprofiletest1.byethost7.com/
-é€™æ˜¯æˆ‘ä¸€äº›å‰ç«¯å·¥å…·çš„æ‡‰ç”¨æ¼”ç¤ºDemo
+³o¬O§Ú¤@¨Ç«eºİ¤u¨ãªºÀ³¥Îºt¥ÜDemo
 
-ä¸»é :
+¥D­¶:
 bootstrap 3
 jquery 1.11
 velocity.js
@@ -15,14 +15,14 @@ snap.svg
 Canvas:
 PIXI v4
 
-å…¶ä»–api:
+¨ä¥Lapi:
 FB js SDK
 google chart
 firebase api
 
-es6èˆ‡æ¨¡çµ„åŒ–:
+es6»P¼Ò²Õ¤Æ:
 babel
 webpack
 
-æœªä¾†é è¨ˆ:
+¥¼¨Ó¹w­p:
 react
